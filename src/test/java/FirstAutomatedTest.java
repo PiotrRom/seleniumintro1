@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,8 +22,9 @@ public class FirstAutomatedTest {
     public void myFirstTest() {
         driver.navigate().to("http://google.pl");
 
-        driver.findElement(By.name("q")).sendKeys("JavaStart");
-        driver.findElement(By.name("q")).submit();
+        WebElement queryField = driver.findElement(By.name("q"));
+        queryField.sendKeys("JavaStart");
+        queryField.submit();
 
         String pageTitle = driver.getTitle();
 
