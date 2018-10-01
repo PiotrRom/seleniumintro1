@@ -1,3 +1,5 @@
+package examples;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -12,9 +14,8 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 import static org.testng.Assert.assertTrue;
-import static org.testng.AssertJUnit.assertFalse;
 
-public class FluentWaitTests {
+public class FluentWaitTests2 {
 
     WebDriver driver;
 
@@ -26,11 +27,9 @@ public class FluentWaitTests {
     }
 
     @Test
-    public void fluentWaitTest() {
-        WebElement helloWorldText = driver.findElement(By.xpath("//div[@id=\"finish\"]/h4"));
+    public void fluentWaitWithExceptionTest() {
         WebElement startButton = driver.findElement(By.xpath("//*[@id=\"start\"]/button"));
-
-        assertFalse(helloWorldText.isDisplayed());
+        WebElement helloWorldText = driver.findElement(By.xpath("//div[@id=\"finish\"]/h4"));
 
         startButton.click();
 
