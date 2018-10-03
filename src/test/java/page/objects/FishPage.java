@@ -5,16 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TopMenuPage {
+public class FishPage {
 
-    @FindBy(css = "#MenuContent a[href*='signonForm']")
-    WebElement signOnLink;
+    @FindBy(css = "#Catalog a[href*='SW-01']")
+    WebElement angelFishLink;
 
-    public TopMenuPage() {
+    public FishPage() {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
-    public void clickOnSignOnLink() {
-        signOnLink.click();
+    public void clickOnAngelFishLink() {
+        angelFishLink.click();
     }
 }

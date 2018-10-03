@@ -5,16 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TopMenuPage {
+public class ShoppingCartPage {
 
-    @FindBy(css = "#MenuContent a[href*='signonForm']")
-    WebElement signOnLink;
+    @FindBy(css = "a[href*='newOrderForm']")
+    WebElement proceedToCheckoutButton;
 
-    public TopMenuPage() {
+    public ShoppingCartPage() {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
-    public void clickOnSignOnLink() {
-        signOnLink.click();
+    public void clickOnProceedToCheckoutButton() {
+        proceedToCheckoutButton.click();
     }
 }
