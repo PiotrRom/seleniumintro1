@@ -14,7 +14,7 @@ public class ShoppingCartTests extends TestBase {
         landingPage.clickOnEnterStoreLink();
 
         MainPage mainPage = new MainPage();
-        mainPage.goToFishSection();
+        mainPage.clickOnUpperLinkToFishSection();
 
         FishPage fishPage = new FishPage();
         fishPage.clickOnAngelFishLink();

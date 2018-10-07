@@ -1,10 +1,10 @@
 package driver.manager;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverManager {
 
+    private static final BrowserType BROWSER_TYPE = BrowserType.CHROME;
     private static WebDriver driver;
 
     private DriverManager() {
@@ -12,17 +12,17 @@ public class DriverManager {
     }
 
     public static WebDriver getWebDriver() {
-
         if (driver == null) {
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\Piotr\\Desktop\\Studia_podyplomowe_Testowanie\\Kurs_Selenium\\chromedriver.exe");
-            driver = new ChromeDriver();
+            driver = BrowserFactory.getBrowser(BROWSER_TYPE);
         }
         return driver;
     }
 
     public static void disposeDriver() {
         driver.close();
-        driver.quit();
+        if (!BROWSER_TYPE.equals(BrowserType.FF)) {
+            driver.quit();
+        }
         driver = null;
     }
 }
